@@ -52,7 +52,7 @@ export default function Home() {
   const handleAddInstallment = () => {
     const newId = installments.length > 0 ? installments[installments.length - 1].id + 1 : 1;
     const startDate = new Date(newInstallment.startingDate);
-    const months = [];
+    const months: Array<{ month: Date; amount: number; paid: boolean }> = []; // Explicitly define the type
 
     for (let i = 0; i < parseInt(newInstallment.duration); i++) {
       const dueMonth = addMonths(startDate, i);
@@ -79,7 +79,7 @@ export default function Home() {
 
   const handleEditInstallment = () => {
     const startDate = new Date(newInstallment.startingDate);
-    const months = [];
+    const months: Array<{ month: Date; amount: number; paid: boolean }> = []; // Explicitly define the type
 
     for (let i = 0; i < parseInt(newInstallment.duration); i++) {
       const dueMonth = addMonths(startDate, i);
