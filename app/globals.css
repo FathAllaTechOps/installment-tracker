@@ -1,0 +1,559 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 220px; /* Adjust for the width of the navbar */
+}
+
+h1, h2 {
+  color: #333;
+  font-family: 'Roboto', sans-serif; /* Modern font */
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #007bff; /* Blue color */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Spacing between letters */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff; /* Blue color */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1.5px; /* Spacing between letters */
+}
+
+input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  cursor: pointer;
+  margin: 10px; /* Increase margin for better spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px); /* Add slight lift on hover */
+}
+
+button.up, button.down {
+  background-color: #ffc107;
+}
+
+button.up:hover, button.down:hover {
+  background-color: #e0a800;
+}
+
+button.edit {
+  background-color: #17a2b8;
+}
+
+button.edit:hover {
+  background-color: #138496;
+}
+
+button svg {
+  margin-right: 8px; /* Increase margin for better spacing */
+}
+
+.installment-card {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.5s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.installment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.installment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #007bff; /* Change to blue */
+  color: white;
+  border-radius: 4px;
+}
+
+.installment-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: black;
+  margin-left: 0; /* Align to the left */
+}
+
+.installment-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Align to the right */
+}
+
+.installment-header h3, .installment-header span {
+  cursor: pointer;
+}
+
+.installment-header h3 {
+  margin: 0;
+}
+
+.installment-header span {
+  font-weight: bold;
+}
+
+.installment-table {
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th {
+  background-color: #0070f3;
+  color: white;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+button {
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  cursor: pointer;
+  margin: 10px; /* Increase margin for better spacing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px); /* Add slight lift on hover */
+}
+
+button.up, button.down {
+  background-color: #ffc107;
+}
+
+button.up:hover, button.down:hover {
+  background-color: #e0a800;
+}
+
+button.edit {
+  background-color: #17a2b8;
+}
+
+button.edit:hover {
+  background-color: #138496;
+}
+
+button svg {
+  margin-right: 8px; /* Increase margin for better spacing */
+}
+
+.total-due {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.installment-header button {
+  margin-left: 10px;
+  background-color: #ff4d4d;
+}
+
+.installment-header button:hover {
+  background-color: #cc0000;
+}
+
+.progress-bar {
+  margin-top: 10px;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #28a745; /* Change to green */
+  text-align: center;
+  color: white;
+  line-height: 30px;
+  border-radius: 15px 0 0 15px;
+  transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.progress-bar-fill:hover {
+  background-color: #005bb5;
+}
+
+.progress-bar-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.add-installment-button,
+.export-button,
+.import-button {
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-installment-button:hover,
+.export-button:hover,
+.import-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Add slight lift on hover */
+}
+
+.add-installment-button {
+  background-color: #28a745;
+}
+
+.add-installment-button:hover {
+  background-color: #218838;
+}
+
+.import-button {
+  background-color: #ffc107;
+}
+
+.import-button:hover {
+  background-color: #e0a800;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  cursor: pointer;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  transform: scale(0.7);
+  animation: scaleUp 0.3s forwards;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  position: relative; /* Ensure close button is positioned correctly */
+}
+
+.modal-content h2 {
+  margin-top: 0; /* Remove default margin */
+  font-size: 1.5rem; /* Increase font size */
+  color: #333; /* Darker color for better readability */
+}
+
+.modal-content input {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem; /* Increase font size */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-content input:focus {
+  border-color: #0070f3; /* Change border color on focus */
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px; /* Add margin to separate from inputs */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Full width button */
+}
+
+.modal-content button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute; /* Position relative to modal content */
+  top: 10px; /* Adjust position */
+  right: 10px; /* Adjust position */
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(1);
+  }
+}
+
+export-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+export-button:hover {
+  background-color: #0056b3;
+}
+
+import-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+import-button:hover {
+  background-color: #e0a800;
+}
+
+h1 {
+  color: #007bff; /* Blue color */
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Spacing between letters */
+}
+
+h2 {
+  color: #007bff; /* Blue color */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 1.5px; /* Spacing between letters */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  box-sizing: border-box; /* Ensure padding is included in the width and height */
+}
+
+.navbar button,
+.navbar label {
+  width: 70%;
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  margin-bottom: 20px; /* Ensure spacing between buttons */
+}
+
+.navbar button:hover,
+.navbar label:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Add slight lift on hover */
+}
+
+.navbar .add-installment-button {
+  background-color: #28a745;
+}
+
+.navbar .add-installment-button:hover {
+  background-color: #218838;
+}
+
+.navbar .import-button {
+  background-color: #ffc107;
+}
+
+.navbar .import-button:hover {
+  background-color: #e0a800;
+}
+
+.navbar input[type="file"] {
+  display: none;
+}
+
+.navbar .custom-file-upload {
+  display: inline-block;
+  padding: 15px 25px; /* Increase padding for larger buttons */
+  font-size: 1rem; /* Increase font size */
+  cursor: pointer;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Increase border radius for a more rounded look */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  margin-bottom: 20px; /* Ensure spacing between buttons */
+}
+
+.sign-in-button,
+.sign-out-button {
+  padding: 15px 25px;
+  font-size: 1rem;
+  background-color: #db4437; /* Google red */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sign-in-button:hover,
+.sign-out-button:hover {
+  background-color: #c23321;
+  transform: translateY(-2px);
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 1px; /* Spacing between letters */
+}
